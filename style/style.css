@@ -1,0 +1,26 @@
+body {
+    background:  linear-gradient(to top, rgb(21, 21, 30), rgb(222,15,23)) fixed;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-container {
+    position: absolute;
+    padding: 1rem;
+    width: 80%;
+    background: rgba(255,255,255, 0.19);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    left: 10%;
+}
+
+.card-container .title img {
+    height: 25%;
+    width: 25%;
+}
+
+.card-container .details .details-form {
+    align-items:center;
+    text-align: left;
+}
