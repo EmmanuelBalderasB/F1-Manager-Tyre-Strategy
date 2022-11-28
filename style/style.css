@@ -1,5 +1,6 @@
 body {
-    background:  linear-gradient(to top, rgb(21, 21, 30), rgb(222,15,23)) fixed;
+    /* background:  linear-gradient(to left, rgb(21, 21, 30), rgb(222,15,23)) fixed; */
+    background: rgb(21,21,30);
     color: whitesmoke;
     font-family: 'Montserrat', sans-serif;
 }
@@ -23,4 +24,95 @@ body {
 .card-container .details .details-form {
     align-items:center;
     text-align: left;
+}
+
+.card-container .details .details-form .input-top select {
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 1rem;
+}
+.card-container .details .details-form .input-middle .input-middle-inputs {
+    display: inline-block;
+    width: 75%;
+    margin-left: 50px;
+}
+
+.card-container .details .details-form .input-middle .input-middle-inputs .left{
+    display: inline-block;
+}
+
+.card-container .details .details-form .input-middle .input-middle-inputs .right {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.card-container .details .details-form .input-middle .input-middle-inputs .first-line,
+.card-container .details .details-form .input-middle .input-middle-inputs .second-line {
+    margin-bottom: 1rem;
+}
+
+.card-container .details .details-form .input-middle .input-middle-inputs .second-line {
+    display: flex;
+}
+.card-container .details .details-form .input-middle .input-middle-inputs .second-line .left {
+    width: fit-content;
+    margin-right: 1rem;
+}
+
+.card-container .details .details-form .input-middle .input-middle-inputs .second-line .right {
+    width: fit-content;
+    position: relative;
+}
+
+.card-container .details .details-form .input-middle .input-middle-inputs .third-line input {
+    position: relative;
+    left: 22.5%;
+}
+
+/* .card-container .details .details-form .input-middle .input-middle-inputs .third-line .right label {
+
+} */
+
+.card-container .details .details-form .input-middle .input-middle-inputs label {
+    display: block;
+    width: 9rem;
+    font-weight: 300;
+    margin-bottom: .7rem;
+}
+.card-container .details .details-form .input-middle .input-middle-inputs input {
+    width: 3rem;
+    border: none;
+    border-radius: 10px;
+    padding: .3rem;
+    position: relative;
+    left: 25%;
+}
+
+.card-container .details .details-form .input-middle .track-layout {
+    position: absolute;
+    display: inline-block;
+    align-items: center;
+    right: 12.5%;
+}
+
+.card-container .details .details-form .input-bottom {
+    width: fit-content;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.card-container .details .details-form .input-bottom .button-container button {
+    padding: .8rem;
+    border: 0 solid;
+    border-radius: 50px;
+    width: 12.5rem;
+    margin-top: 1rem;
+    background-color: white;
+}
+
+.card-container .details .details-form .input-bottom .button-container button:hover {
+    background-color: rgb(21,21,30);
+    color: white;
+    border: 2px solid white;
 }
