@@ -1,15 +1,81 @@
 import data from "./data.js"
 
-console.log(data);
-
 const select = document.getElementById('track-select');
 const layoutContainer = document.getElementById('layout-container');
-const trackOptions = document.querySelector('.track-options');
+const avgLapTime = document.getElementById('avg-lap-time');
+const avgPitLoss = document.getElementById('avg-pit-loss');
+const avgSoftLoss = document.getElementById('avg-soft-loss');
+const avgMediumLoss = document.getElementById('avg-medium-loss');
+const avgHardLoss = document.getElementById('avg-hards-loss');
+const lapNum = document.getElementById('lap-num');
+const next = document.getElementById('next');
+
+const format = () => {
+    try {
+        select.innerHTML = data.map(item => {
+            return `<option id="${item.name}" value="${item.name}">${item.name}</option>`
+        }).join('')
+    } catch (error) {
+        console.log(error);
+    }
+}
+format();
+
+const getImage = async() => {
+    try {
+            let circuits = data.map(item => {
+                return {name: item.name, image: item.image}
+            })
+            console.log(circuits);
+            
+            select.addEventListener('change', (e) => {
+                for (let i = 0; i < circuits.length; i++) {
+                    if (e.target.value === circuits[i].name) {
+                        layoutContainer.innerHTML =  `<img class="images" id="layout-image" src="${circuits[i].image}">`;
+                        break;
+                    }
+                }
+            })
+        
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+getImage();
+
+let map = [];
+
+const getStrat = (e) => {
+    e.preventDefault();
+    const avgLap = Number(avgLapTime.value);
+    console.log( avgLap);
+    const numLaps = Number(lapNum.value);
+    console.log(numLaps);
+    let i = 0;
+    const softDeg = Number(avgSoftLoss.value); 
+    console.log( softDeg);
+    let totalTime = 0;
+    while (i < numLaps) {
+        /* if(i > 20) {
+            softDeg = softDeg * 1.2;
+        } */
+        totalTime = (totalTime + avgLap + softDeg);
+        i++;
+        map.push({lapNum: i, time: totalTime});
+    }
+    let totalMinutes = totalTime / 60;
+
+    console.log(totalMinutes);
+    return totalMinutes;
+}
+
+next.addEventListener('click', getStrat);
 
 /* const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '53f56d893dmsh3d3e9b55db49f04p1aab4ejsna1c9b1eccb8b',
+		'X-RapidAPI-Key': 'YOUR_API_KEY_HERE',
 		'X-RapidAPI-Host': 'api-formula-1.p.rapidapi.com'
 	}
 };
