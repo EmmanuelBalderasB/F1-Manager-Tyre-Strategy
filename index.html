@@ -27,13 +27,46 @@
                     </div>
                     <div class="input-middle">
                         <div class="input-middle-inputs">
-
+                            <div class="first-line">
+                                <div class="left">
+                                    <label for="avg-lap-time">Average Lap Time In Seconds</label>
+                                    <input class="first-line-input" size="3" id="avg-lap-time" type="tel" placeholder="88s" pattern="[0-9]{3}">
+                                </div>
+                                <div class="right">
+                                    <label for="avg-pit-loss">Average Pit Time Loss</label>
+                                    <input class="first-line-input" size="3" id="avg-pit-loss" type="tel" placeholder="22s" pattern="[0-9]{2}">
+                                </div>
+                            </div>
+                            <div class="second-line">
+                                <div class="left">
+                                    <label for="avg-soft-loss">Softs Average Time Loss Per Lap</label>
+                                    <input type="tel" size="3" placeholder="08s" class="second-line-input" id="avg-soft-loss">
+                                </div>
+                                <div class="rigth">
+                                    <label for="avg-medium-loss">Mediums Average Time Loss Per Lap</label>
+                                    <input type="tel" size="3" placeholder="05s" class="second-line-input" id="avg-medium-loss">
+                                </div>
+                            </div>
+                            <div class="third-line">
+                                <div class="left">
+                                    <label for="avg-hard-loss">Hards Average Time Loss Per Lap</label>
+                                    <input type="tel" placeholder="05s" class="third-line-input" id="avg-hard-loss">
+                                </div>
+                                <div class="right">
+                                    <label for="lap-num">Number of Laps</label>
+                                <input type="tel" placeholder="22" class="third-line-input" id="lap-num">
+                                </div>
+                            </div>
                         </div>
                         <div class="track-layout" id="layout-container">
 
                         </div>
                     </div>
-                    <div class="input-bottom"></div>
+                    <div class="input-bottom">
+                        <div class="button-container">
+                            <button type="submit" id="next">Next</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
